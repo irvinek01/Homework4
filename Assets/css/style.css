@@ -1,0 +1,115 @@
+:root {
+    --maindesign: rgb(33, 150, 70);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+.wrapper {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: sans-serif;
+  background-color: #f9fbfd;
+}
+
+.wrapper {
+  padding-top: 30px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+header {
+  text-align: center;
+  padding: 0.5%;
+  color: var(--maindesign);
+}
+
+.time, .highscores {
+    color: var(--maindesign);
+}
+
+.card {
+  background-image: linear-gradient(rgb(127, 250, 148), rgb(33, 150, 70), rgb(18, 80, 37) );
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px 0px;
+  color: hsl(0, 0%, 100%);
+  font-size: 18px;
+  margin: 0 auto;
+  max-width: 800px;
+  padding: 30px 40px;
+  text-align: center;
+  border-radius: 3.5em 3.5em 0 3.5em;
+}
+
+.card-header::after {
+  content: " ";
+  display: block;
+  width: 100%;
+  background: #e7e9eb;
+}
+
+.card-body {
+  min-height: 100px;
+  text-align: center;
+}    
+
+.card-footer {
+  text-align: center;
+}
+
+.card-footer::before {
+  content: " ";
+  display: block;
+  width: 100%;
+  background: #e7e9eb;
+  height: 2px;
+}
+
+.card-footer::after {
+  content: " ";
+  display: block;
+  clear: both;
+}
+
+.button {
+  vertical-align: middle;
+  border: none;
+  background-color: rgb(255, 255, 255);
+  border-radius: 3.5em 3.5em 0 3.5em;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 6px 0px rgba(0, 0, 0, 0.2) 0px 1px 1px
+    0px;
+  color: var(--maindesign);
+  display: inline-block;
+  font-size: 22px;
+  line-height: 22px;
+  margin: 16px 16px 16px 20px;
+  padding: 14px 34px;
+  text-align: center;
+  cursor: pointer;
+}
+
+@media (max-width: 690px) {
+  .button {
+    font-size: 1rem;
+    margin: 16px 0px 0px 0px;
+    padding: 10px 15px;
+  }
+
+  .card {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .button {
+    font-size: 0.8rem;
+  }
+}
