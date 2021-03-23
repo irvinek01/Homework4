@@ -37,6 +37,10 @@ header {
     color: var(--maindesign);
 }
 
+label {
+  color: hsl(0, 0%, 100%);
+}
+
 .card {
   background-image: linear-gradient(rgb(127, 250, 148), rgb(33, 150, 70), rgb(18, 80, 37) );
   box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px 0px;
@@ -57,8 +61,7 @@ header {
 }
 
 .card-body {
-  min-height: 100px;
-  text-align: center;
+  text-align: left;
 }    
 
 .card-footer {
@@ -79,7 +82,7 @@ header {
   clear: both;
 }
 
-.button {
+.button, button {
   vertical-align: middle;
   border: none;
   background-color: rgb(255, 255, 255);
