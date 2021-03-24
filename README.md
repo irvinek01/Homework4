@@ -1,7 +1,7 @@
 # 04 Web APIs: Code Quiz
 
 ## Description
-It is a Password Generator, at the click of the button, A Popup prompt box will ask "How many characters would you like your Password to contain?", input validations are included such as "Should be at least 8 characters and not more than 128", or if the user did not put anything, or if the user did put something aside from number. After the Password length is given, it will ask a series of Popup confirm boxes, whether the user wants the password to include lower/upper cases, numeric and/or special characters. User should at least pick one in order to generate a random one. The result will appear at the text area, in a jumbled form.
+Web based quiz game. In this particular work, the questions are all about Javascsript programming with three choices each, the whole series is timed and can see the last play
 
 - Many conditional statements firing then looping, to test what I learned from Week 2 (15 MAR - 19 MAR) 
 - To help ease of thinking complex passwords by just the click of a button (And a series of pop up boxes)
@@ -23,14 +23,18 @@ The following image shows the web application's appearance and functionality:
 ![Upon Start Challenge button click.](./Assets/screenshots/upon-button-click.png)
 
 #### URLs
-https://irvinek01.github.io/Homework3/
-https://github.com/irvinek01/Homework3
+https://irvinek01.github.io/Homework4/
+https://github.com/irvinek01/Homework4
 
 ##### SPECIAL THANKS
-- https://stackoverflow.com/questions/1497481/javascript-password-generator
-- 3rd Answer post, with 31 Vote as of 18 MAR 21
-- Answered by user "hajikelist" and edited by "Bruno Bronosky"
+- https://www.codemahal.com/video/javascript-quiz-tutorial/
 
 - Mr. John
 - Maam Janani
 - My Whole class
+- Would like to commend the following persons for helping directly(guiding me what to do next)/indirectly(asking questions to the instructors that I'm not aware of):
+  ~ Oliver Shi
+  ~ Elvis Lee
+  ~ Brian Hernandez
+  ~ William Lucht
+  ~ Tyler Abegg
