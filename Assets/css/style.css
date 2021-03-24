@@ -36,6 +36,9 @@ header {
 .time, .highscores {
     color: var(--maindesign);
 }
+.time {
+  text-align: right;
+}
 
 label {
   color: hsl(0, 0%, 100%);

@@ -6,15 +6,15 @@ var questionBody = document.querySelector(".card-body");
 var questionFooter = document.querySelector(".card-footer");
 var startButton = document.querySelector("#start");
 
-var secondsLeft = 30;
+var secondsLeft = 40;
 
 var pos = 0, test, test_status, question, 
-userChoice, choices, chA, chB, chC, 
+userChoice, choices, chA, chB, chC, userInitials, 
 correct = 0;
 
 var myQuestions = [
 	{
-		question: "What will you usea to write Hello World in an alert box?",
+		question: "What will you use to write Hello World in an alert box?",
 		a: "msg();",
 		b: "alert();",
 		c: "alertBox();",
@@ -25,6 +25,20 @@ var myQuestions = [
 		a: "//Comment",
 		b: "&lt;!--Comment--&gt;",
 		c: "{Comment}",
+		correctAnswer: "A"
+	},
+	{
+		question: "Which event occurs when the user clicks on an HTML element?",
+		a: "click",
+		b: "onmouseclick",
+		c: "onclick",
+		correctAnswer: "C"
+	},
+	{
+		question: "How do you declare a JavaScript variable?",
+		a: "var varname",
+		b: "variable varname",
+		c: "var = varname",
 		correctAnswer: "A"
 	}
 ];
@@ -44,7 +58,7 @@ function timeRemaining() {
 	if( (secondsLeft <= 0) || (pos >= myQuestions.length) ) {
 	questionBody.innerHTML = "";
 	clearInterval(timerInterval);
-	var userInitials = prompt("GAME OVER! \nYour final score is "+secondsLeft+
+	userInitials = prompt("GAME OVER! \nYour final score is "+secondsLeft+
 	"\nPlease type in your initials");
 	if (userInitials == null || userInitials == "") {
 		alert("You did not enter anything");
@@ -53,8 +67,10 @@ function timeRemaining() {
 		return false;
 	} else if (/^[a-zA-Z]*$/g.test(userInitials) ) {
 		console.log("Hi "+userInitials+", you scored "+secondsLeft+ "!");
+		timeLeft.textContent="";
+		saveLastInitials();
+		renderLastInitials();
 	}
-	
 	}
 	// This makes the countdown consistent with the text content
 	secondsLeft--;
@@ -106,3 +122,31 @@ function checkAnswer(){
 	// then the renderQuestion function runs again to go to next question
 	renderQuestion();
   }
+
+  function saveLastInitials() {
+	// Save related form data as an object
+	var hiScorer = {
+	  initials: userInitials,
+	  hiScore: secondsLeft,
+	};
+	// Use .setItem() to store object in storage and JSON.stringify to convert it as a string
+	localStorage.setItem("HighScore", JSON.stringify(hiScorer));
+  }
+
+  function renderLastInitials() {
+	// Use JSON.parse() to convert text to JavaScript object
+	var lastPlayer = JSON.parse(localStorage.getItem("HighScore"));
+	// Check if data is returned, if not exit out of the function
+	if (lastPlayer !== null) {
+		highscores.innerHTML += "<br>Last Player Initials: "+lastPlayer.initials;
+		highscores.innerHTML += "<br>Score: "+lastPlayer.hiScore;
+	} else {
+		return;
+	}
+	
+  }
+
+  function init() {
+	renderLastInitials();
+  }
+  init();
