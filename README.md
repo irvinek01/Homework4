@@ -1,7 +1,7 @@
 # 04 Web APIs: Code Quiz
 
 ## Description
-Web based quiz game. In this particular work, the questions are all about Javascsript programming with three choices each, the whole series is timed and can see the last player initials and his/her score. Score is based on time, wrong answers will lead to deduction of time, the game is over when the questions are all answered or timer reaches 0.
+Web based quiz game. In this particular work, the questions are all about Javascsript programming with three choices each, the whole series is timed and can see the last player initials and his/her score. Score is based on time, wrong answers will lead to deduction of time, the game is over when the questions are all answered or timer reaches 0. At game over, it will ask for user initials and link with score.
 
 - This project uses time interval, local storage, data attributes, to test what I learned from Week 2 (15 MAR - 19 MAR) 
 - To make learning fun and with more twists, build a coding quiz on a web page!
