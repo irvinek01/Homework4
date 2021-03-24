@@ -62,8 +62,11 @@ function timeRemaining() {
 	"\nPlease type in your initials");
 	if (userInitials == null || userInitials == "") {
 		alert("You did not enter anything");
+		location.reload();
+		return false;
 	} else if (!/^[a-zA-Z]*$/g.test(userInitials) ) {
 		alert("Letters are only accepted!");
+		location.reload();
 		return false;
 	} else if (/^[a-zA-Z]*$/g.test(userInitials) ) {
 		console.log("Hi "+userInitials+", you scored "+secondsLeft+ "!");
@@ -109,22 +112,26 @@ function checkAnswer(){
 		userChoice = choices[i].value;
 	  }
 	}
+	console.log(userChoice);
 	// checks if answer matches the correct choice
 	if(userChoice == myQuestions[pos].correctAnswer){
 		questionFooter.innerHTML="YOU ARE CORRECT!";
 		correct ++;
+	} else if (userChoice == null) {
+		alert("Please choose one!");
+		return false;
 	} else {
-		questionFooter.innerHTML="SORRY, YOU ARE WRONG! -10";
+		questionFooter.innerHTML="SORRY, YOU ARE WRONG!";
 		secondsLeft -= 10;
 	}
 	// changes position of which character user is on
 	pos++;
 	// then the renderQuestion function runs again to go to next question
 	renderQuestion();
+	userChoice="";
   }
 
   function saveLastInitials() {
-	// Save related form data as an object
 	var hiScorer = {
 	  initials: userInitials,
 	  hiScore: secondsLeft,
