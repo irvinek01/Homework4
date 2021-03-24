@@ -1,4 +1,3 @@
-
 var highscores = document.querySelector(".highscores");
 var timeLeft = document.querySelector(".time");
 var questionHeader = document.querySelector(".card-header");
@@ -54,12 +53,15 @@ startButton.addEventListener("click",function(event) {
 function timeRemaining() {
 	// Show first value of countdown, to show 30 instead of 29
 	timeLeft.textContent=secondsLeft;
+
 	var timerInterval = setInterval(function() {
+
 	if( (secondsLeft <= 0) || (pos >= myQuestions.length) ) {
 	questionBody.innerHTML = "";
 	clearInterval(timerInterval);
 	userInitials = prompt("GAME OVER! \nYour final score is "+secondsLeft+
 	"\nPlease type in your initials");
+
 	if (userInitials == null || userInitials == "") {
 		alert("You did not enter anything");
 		location.reload();
@@ -74,6 +76,7 @@ function timeRemaining() {
 		saveLastInitials();
 		renderLastInitials();
 	}
+
 	}
 	// This makes the countdown consistent with the text content
 	secondsLeft--;
@@ -84,12 +87,14 @@ function timeRemaining() {
 function renderQuestion(){
 	questionHeader.textContent="";
     questionBody.textContent="";
+
 	if(pos >= myQuestions.length){
 	questionBody.innerHTML = "<h2>You got "+correct+" of "+myQuestions.length+" questions correct</h2>";
 	questionHeader.innerHTML = "Test completed";
 	  // stops rest of renderQuestion function running when test is completed
 	  return false;
 	}
+
 	questionBody.innerHTML += "Question "+(pos+1)+" of "+myQuestions.length;
 	question = myQuestions[pos].question;
 	chA = myQuestions[pos].a;
@@ -107,12 +112,14 @@ function renderQuestion(){
 
 function checkAnswer(){
 	choices = document.getElementsByName("choices");
+
 	for(var i=0; i<choices.length; i++){
+
 	  if(choices[i].checked){
 		userChoice = choices[i].value;
 	  }
+
 	}
-	console.log(userChoice);
 	// checks if answer matches the correct choice
 	if(userChoice == myQuestions[pos].correctAnswer){
 		questionFooter.innerHTML="YOU ARE CORRECT!";
@@ -143,6 +150,7 @@ function checkAnswer(){
   function renderLastInitials() {
 	// Use JSON.parse() to convert text to JavaScript object
 	var lastPlayer = JSON.parse(localStorage.getItem("HighScore"));
+	
 	// Check if data is returned, if not exit out of the function
 	if (lastPlayer !== null) {
 		highscores.innerHTML += "<br>Last Player Initials: "+lastPlayer.initials;
