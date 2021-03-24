@@ -1,11 +1,11 @@
 # 04 Web APIs: Code Quiz
 
 ## Description
-Web based quiz game. In this particular work, the questions are all about Javascsript programming with three choices each, the whole series is timed and can see the last play
+Web based quiz game. In this particular work, the questions are all about Javascsript programming with three choices each, the whole series is timed and can see the last player initials and his/her score. Score is based on time, wrong answers will lead to deduction of time, the game is over when the questions are all answered or timer reaches 0.
 
-- Many conditional statements firing then looping, to test what I learned from Week 2 (15 MAR - 19 MAR) 
-- To help ease of thinking complex passwords by just the click of a button (And a series of pop up boxes)
-- Learned array looping, getting values from different popup boxes (confirm, alert and prompt), using Boolean values to trigger functions and to turn them off, input validations checks(series of if else if conditional statements)
+- This project uses time interval, local storage, data attributes, to test what I learned from Week 2 (15 MAR - 19 MAR) 
+- To make learning fun and with more twists, build a coding quiz on a web page!
+- Learned the procedures of making a timer-based algorithm, storing arrays/object into local storage in string form(otherwise it will be declared as undefined), converting it back to object when displaying/comparing, making codes more neat and efficient by using functions(making repetitive lines of codes into an on call function)
 
 ### Screenshots
 The following image shows the web application's appearance and functionality:
